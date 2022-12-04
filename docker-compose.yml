@@ -1,12 +1,42 @@
 version: '3'
 services:
 
-  app:
+  app1:
     image: ghcr.io/remast/gobuff_realworld_example_app/app:latest
-    container_name: gobuf___app
+    container_name: api-01
     hostname: app
     ports:
-      - "3000:3000"
+      - "3001:3001"
+    depends_on:
+      - db
+    environment:
+      - "WAIT_HOSTS=192.168.100.158:5432"
+      - "DATABASE_HOST=192.168.100.158"
+      - "POSTGRES_DB=gobuff_realworld_example_app_development"
+      - "POSTGRES_PASSWORD=postgres"
+      - "POSTGRES_USER=postgres"
+      
+  app2:
+    image: ghcr.io/remast/gobuff_realworld_example_app/app:latest
+    container_name: api-02
+    hostname: app
+    ports:
+      - "3002:3002"
+    depends_on:
+      - db
+    environment:
+      - "WAIT_HOSTS=192.168.100.158:5432"
+      - "DATABASE_HOST=192.168.100.158"
+      - "POSTGRES_DB=gobuff_realworld_example_app_development"
+      - "POSTGRES_PASSWORD=postgres"
+      - "POSTGRES_USER=postgres"
+      
+  app3:
+    image: ghcr.io/remast/gobuff_realworld_example_app/app:latest
+    container_name: api-03
+    hostname: app
+    ports:
+      - "3003:3003"
     depends_on:
       - db
     environment:
