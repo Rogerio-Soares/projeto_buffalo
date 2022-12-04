@@ -4,7 +4,7 @@ services:
   app1:
     image: ghcr.io/remast/gobuff_realworld_example_app/app:latest
     container_name: api-01
-    hostname: app
+    hostname: api-01
     ports:
       - "3001:3001"
     depends_on:
@@ -19,7 +19,7 @@ services:
   app2:
     image: ghcr.io/remast/gobuff_realworld_example_app/app:latest
     container_name: api-02
-    hostname: app
+    hostname: api-02
     ports:
       - "3002:3002"
     depends_on:
@@ -34,7 +34,7 @@ services:
   app3:
     image: ghcr.io/remast/gobuff_realworld_example_app/app:latest
     container_name: api-03
-    hostname: app
+    hostname: api-03
     ports:
       - "3003:3003"
     depends_on:
