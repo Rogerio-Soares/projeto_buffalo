@@ -3,7 +3,7 @@ services:
 
   app1:
     image: ghcr.io/remast/gobuff_realworld_example_app/app:latest
-    container_name: app
+    container_name: gobuf___app
     hostname: app
     ports:
       - "3000:3000"
@@ -18,7 +18,7 @@ services:
       
   db:
     image: postgres:latest
-    container_name: db
+    container_name: gobuf___db
     hostname: db
     environment:
       - "WAIT_HOSTS=192.168.100.158:5432"
